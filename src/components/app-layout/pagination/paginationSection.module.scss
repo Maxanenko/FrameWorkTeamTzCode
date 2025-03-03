@@ -1,0 +1,13 @@
+@use '../../../style/helpers/index' as *;
+
+.inner {
+  padding-block: rem(42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: rem(26);
+
+  @include mobile {
+    padding-block: rem(32);
+  }
+}

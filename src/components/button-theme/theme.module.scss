@@ -1,0 +1,27 @@
+@use '../../style/helpers' as *;
+
+.theme {
+  @include flex-center;
+  @include square(rem(50));
+
+  position: relative;
+  padding: rem(10);
+  background-color: var(--secondary-bg-color);
+  border: none;
+  border-radius: 50%;
+}
+
+.icon {
+  @include square(rem(20));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &.sun {
+    background-image: url('../../assets/icons/sun.svg');
+  }
+
+  &.moon {
+    background-image: url('../../assets/icons/moon.svg');
+  }
+}

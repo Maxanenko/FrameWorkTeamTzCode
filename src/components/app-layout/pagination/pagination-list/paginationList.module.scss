@@ -1,0 +1,7 @@
+@use '../../../../style/helpers/index' as *;
+
+.list {
+  display: flex;
+  align-items: center;
+  column-gap: rem(4);
+}

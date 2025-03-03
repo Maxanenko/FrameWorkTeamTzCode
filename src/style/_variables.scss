@@ -1,0 +1,56 @@
+@use 'helpers' as *;
+
+:root {
+  /* Colors primary */
+  --primary-white: #ffffff;
+  --primary-black: #121212;
+  --primary-light-gray: #dedede;
+  --primary-dark-gray: #575757;
+
+  /* Colors secondary */
+  --secondary-white: #fcfcfc;
+  --secondary-black: #1a1818;
+  --secondary-gray: #9c9c9c;
+
+  /* Colors accent */
+  --accent-red: #9b4b4b;
+  --accent-gold: #ab8956;
+
+  /* Font family */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-accent: 'Cormorant SC', sans-serif;
+  --font-family-third: 'Urbanist', sans-serif;
+
+  --container-width: #{rem(1240)};
+  --container-padding-x: #{rem(20)};
+
+  --transition-duration: 0.3s;
+
+  @include laptop {
+    --container-width: #{rem(728)};
+  }
+}
+
+[data-theme='dark'] {
+  --bg-color: var(--primary-black);
+  --secondary-bg-color: var(--secondary-black);
+  --search-border-color: transparent;
+  --pagination-active-color: var(--secondary-black);
+  --input-placeholder-color: var(--primary-dark-gray);
+  --logo-color: var(--primary-light-gray);
+  --font-color: var(--primary-light-gray);
+  --border-color: var(--primary-light-gray);
+  --accent-color: var(--accent-gold);
+}
+
+[data-theme='light'] {
+  --bg-color: var(--primary-white);
+  --secondary-bg-color: var(--secondary-white);
+  --search-border-color: #dedede;
+  --pagination-active-color: #f3f3f3;
+  --input-placeholder-color: var(--secondary-gray);
+  --logo-color: var(--primary-dark-gray);
+  --font-color: var(--primary-black);
+  --border-color: var(--primary-dark-gray);
+  --accent-color: var(--accent-red);
+}

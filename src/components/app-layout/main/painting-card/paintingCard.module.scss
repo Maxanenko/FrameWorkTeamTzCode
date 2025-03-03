@@ -1,0 +1,72 @@
+@use '../../../../style/helpers/index' as *;
+
+.card {
+  position: relative;
+  overflow: hidden;
+  &__image {
+    transition: all var(--transition-duration);
+    min-width: fluid(392, 280);
+    height: fluid(260, 185);
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    row-gap: rem(8);
+    width: 77%;
+    height: 32%;
+    background-color: var(--bg-color);
+
+    color: var(--accent-color);
+    font-size: rem(16);
+    font-weight: 500;
+
+    &Hover {
+      transform: translate(-400%, 0);
+    }
+
+    &Hover,
+    &Main {
+      position: absolute;
+      top: 50%;
+      left: rem(20);
+      translate: 0 -50%;
+      transition: all var(--transition-duration);
+
+      @include laptop {
+        left: rem(12);
+      }
+    }
+
+    @include laptop-above {
+      &::before {
+        position: absolute;
+
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        content: '';
+        width: rem(2);
+        height: 51%;
+        background-color: var(--accent-color);
+      }
+    }
+  }
+
+  @include hover {
+    .card__image {
+      transform: scale(1.1);
+    }
+
+    .card__infoHover {
+      transform: translate(0, 0);
+    }
+
+    .card__infoMain {
+      transform: translate(0, 200%);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@use 'helpers' as *;
+
+body {
+  @include fluid-text(18, 14);
+
+  height: 100%;
+  font-family: var(--font-family-base);
+  line-height: 140%;
+  font-weight: 300;
+
+  background-color: var(--bg-color);
+  color: var(--logo-color);
+
+  transition-duration: var(--transition-duration);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex-grow: 1;
+}
+
+#pagination {
+  margin-top: auto;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: var(--font-family-accent);
+  color: var(--font-color);
+  font-weight: 500;
+}
+
+h2,
+.h2 {
+  @include fluid-text(16, 12);
+
+  line-height: normal;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}

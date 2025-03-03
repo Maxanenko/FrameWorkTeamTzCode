@@ -1,0 +1,63 @@
+@use '../../style/helpers/index' as *;
+
+.inputBox {
+  position: relative;
+  overflow-x: hidden;
+
+  &::before {
+    @include square(rem(16));
+
+    top: 50%;
+    left: rem(13);
+    translate: 0 -50%;
+    position: absolute;
+    content: '';
+    flex-shrink: 0;
+
+    background-image: none;
+    mask-image: url('../../assets/icons/search.svg'); // Используем маску
+    -webkit-mask-image: url('../../assets/icons/search.svg'); // Для совместимости
+
+    background-color: var(--logo-color);
+  }
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: rem(8) rem(48);
+  border: rem(1) solid var(--search-border-color);
+  color: var(--logo-color);
+  border-radius: rem(4);
+  background-color: var(--secondary-bg-color);
+
+  &::placeholder {
+    font-weight: 300;
+    color: var(--input-placeholder-color);
+  }
+
+  &:focus {
+    border: 1px solid var(--border-color);
+    outline: none;
+  }
+}
+
+.cross {
+  @include square(12);
+  display: grid;
+  --translateX: 200%;
+  position: absolute;
+  top: 52%;
+  right: rem(18);
+  translate: var(--translateX) -52%;
+  color: var(--logo-color);
+  background-color: transparent;
+  border: none;
+  pointer-events: none;
+}
+
+.cross.active {
+  @include show;
+  --translateX: 0;
+  pointer-events: auto;
+}

@@ -1,0 +1,18 @@
+@use '../../../../style/helpers/index' as *;
+
+.list {
+  --columnCount: 3;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columnCount), 1fr);
+  justify-items: center;
+  gap: fluid(32, 20);
+
+  @include laptop {
+    --columnCount: 2;
+  }
+
+  @include tablet {
+    --columnCount: 1;
+  }
+}

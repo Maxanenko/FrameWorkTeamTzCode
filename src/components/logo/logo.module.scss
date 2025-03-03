@@ -1,0 +1,11 @@
+@use '../../style/helpers' as *;
+
+.logo {
+  & svg {
+    color: var(--logo-color) !important;
+    @include tablet {
+      width: rem(73);
+      height: rem(16);
+    }
+  }
+}

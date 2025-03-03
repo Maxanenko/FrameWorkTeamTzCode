@@ -1,0 +1,22 @@
+@use '../../style/helpers' as *;
+
+.empty {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  p {
+    font-size: fluid(20, 14);
+  }
+}
+
+.emptyTitle {
+  font-family: var(--font-family-base);
+  font-weight: 300;
+  font-size: fluid(30, 16);
+}
+
+.emptyBold {
+  font-weight: 500;
+}

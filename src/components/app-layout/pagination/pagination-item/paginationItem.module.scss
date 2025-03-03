@@ -1,0 +1,25 @@
+@use '../../../../style/helpers/index' as *;
+
+.button {
+  @include square(rem(25));
+
+  padding: rem(1) rem(8);
+  color: var(--logo-color);
+  background-color: transparent;
+  border: none;
+  border-radius: rem(4) rem(4) 0 0;
+  font-weight: 300;
+  transition: all var(--transition-duration);
+
+  @include hover {
+    border-bottom: rem(1) solid var(--border-color);
+    font-weight: 500;
+  }
+}
+
+.button.isActive {
+  background-color: var(--pagination-active-color);
+  pointer-events: none;
+  font-weight: 500;
+  border-radius: rem(4);
+}

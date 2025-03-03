@@ -1,0 +1,17 @@
+@use '../../../../style/helpers/index' as *;
+
+.buttonArrow {
+  padding: rem(4) rem(6);
+  display: grid;
+  background: none;
+  border: none;
+  border-radius: rem(4);
+
+  & svg {
+    color: var(--font-color);
+  }
+
+  @include hover {
+    background-color: var(--pagination-active-color);
+  }
+}
