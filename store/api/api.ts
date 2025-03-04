@@ -77,10 +77,13 @@ export const api = createApi({
         }),
         getImage: builder.query<string, string>({
             query: (imagePath) => ({
-                url: imagePath,
+                url: `${imagePath}`,
             }),
             transformResponse: (_, meta, arg) => {
-                return `https://test-front.framework.team${arg}`;
+                if (!meta?.response || meta.response.status !== 200) {
+                    return 'https://astrotowing.ca/wp-content/uploads/2020/08/Horizontal-Placeholder-Image-13947_1080x675.jpg';
+                }
+                return `https://test-front.framework.team${arg}`
             },
         }),
     }),
