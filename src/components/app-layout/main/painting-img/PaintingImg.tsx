@@ -17,16 +17,18 @@ export default function PaintingImg({
       setImgSrc(placeholder);
       return;
     }
+
     const loadImage = async () => {
       try {
         const response = await fetch(image);
         if (!response.ok) throw new Error('Ошибка загрузки');
         const blob = await response.blob();
-        setImgSrc(URL.createObjectURL(blob));
+        setImgSrc(URL.createObjectURL(blob)); // Создаём локальный URL
       } catch {
         setImgSrc(placeholder);
       }
     };
+
     loadImage();
   }, [image, isError]);
 
